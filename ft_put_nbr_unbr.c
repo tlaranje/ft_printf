@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_nbr_unbr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 11:01:36 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/28 13:01:57 by tlaranje         ###   ########.fr       */
+/*   Created: 2025/10/27 17:02:23 by tlaranje          #+#    #+#             */
+/*   Updated: 2025/10/28 13:10:12 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
+int	ft_putnbr(long n)
+{
+	int		len;
+	char	*str;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putptr(void *p);
-int	ft_puthex(unsigned long n, int up_lo_case);
-int	ft_putnbr(long n);
-int	ft_putunbr(unsigned long un);
+	str = ft_itoa(n);
+	ft_putstr(str);
+	len = ft_strlen(str);
+	free(str);
+	return (len);
+}
 
-#endif
+int	ft_putunbr(unsigned long un)
+{
+	int		len;
+	char	*str;
+
+	str = ft_utoa(un);
+	ft_putstr(str);
+	len = ft_strlen(str);
+	free(str);
+	return (len);
+}

@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:58:32 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/27 16:58:43 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/10/28 10:47:07 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *s)
 {
-	write(1, s, ft_strlen(s));
-	return (ft_strlen(s));
+	int	str_len;
+
+	if (!s)
+		s = "(null)";
+	str_len = ft_strlen(s);
+	write(1, s, str_len);
+	return (str_len);
 }

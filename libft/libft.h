@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:46:55 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/26 00:15:13 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:02:24 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdint.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdarg.h>
+# include <limits.h>
 
 //Part 1
 int		ft_atoi(const char *str);
@@ -57,6 +59,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_utoa(unsigned long un);
 
 //Bonus
 typedef struct s_list

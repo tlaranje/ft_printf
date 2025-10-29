@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_bonus.c                                     :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 14:13:27 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/29 17:03:17 by tlaranje         ###   ########.fr       */
+/*   Created: 2025/10/29 13:49:33 by tlaranje          #+#    #+#             */
+/*   Updated: 2025/10/29 13:55:58 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_put_aligned(const char format, int nbr, int width, int is_right)
+int	ft_nbrlen(int n)
 {
-	int	count;
-	(void)format;
-	(void)is_right;
-	count = 0;
-	printf("W: %d", width);
-	while (width--)
-		count += write(1, "-", 1);
-	count += ft_putnbr(nbr);
-	return (count);
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }

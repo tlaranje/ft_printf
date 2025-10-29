@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:46:55 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/28 13:02:24 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/10/29 13:54:06 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *str, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_utoa(unsigned long un);
+int		ft_nbrlen(int n);
 
 //Part 2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -59,7 +61,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-char	*ft_utoa(unsigned long un);
 
 //Bonus
 typedef struct s_list

@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:09:59 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/30 14:29:43 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:56:37 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void test_unsigned(void)
 
 		printf("======= Unsigned: %u\n", u_nums[i]);
 		printf(" printf(\"Unsigned: %%u\\n\", u_nums[i])\n");
-		std_ret = printf("	Unsigned: %u\n", u_nums[i]);
+		std_ret = printfft_putunbr("	Unsigned: %u\n", u_nums[i]);
 		printf("	printf returned: %d\n", std_ret);
 
 		if (i < 4)

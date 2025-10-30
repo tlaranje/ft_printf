@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:09:59 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/10/29 17:05:08 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:47:11 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void test_basic(void)
 
 	printf("======= Char: %c | String: %s | Pointer: %p\n\n", c, s, ptr);
 
-	printf(" ft_printf(\"Char: %%c | String: %%s | Pointer: %%p\", c, s, ptr)\n");
+	printf(" ft_printf(\"Char: %%c | String: %%s |
+	Pointer: %%p\", c, s, ptr)\n");
 	ft_ret = ft_printf("	Char: %c | String: %s | Pointer: %p\n", c, s, ptr);
 	printf("	ft_printf returned: %d\n\n", ft_ret);
 
@@ -33,8 +34,10 @@ void test_basic(void)
 
 	printf("======= Null string: %s | Null pointer: %p\n\n", null_s, null_ptr);
 
-	printf(" ft_printf(\"String: %%s | Pointer: %%p\", null_s, null_ptr)\n");
-	ft_ret = ft_printf("	Null string: %s | Null pointer: %p\n", null_s, null_ptr);
+	printf(" ft_printf(\"String: %%s |
+	Pointer: %%p\", null_s, null_ptr)\n");
+	ft_ret = ft_printf("	Null string: %s |
+	Null pointer: %p\n", null_s, null_ptr);
 	printf("	ft_printf returned: %d\n\n", ft_ret);
 
 	printf(" printf(\"String: %%s | Pointer: %%p\", null_s, null_ptr)\n");
@@ -50,14 +53,18 @@ void test_signed(void)
 
 	for (int i = 0; i < 5; i++)
 	{
-		printf("=========================== Test %d ===========================\n\n", i + 1);
+		printf("=========================== Test %d
+		===========================\n\n", i + 1);
 		printf("======= Decimal: %d | Base 10: %i\n", i_nums[i], i_nums[i]);
-		printf(" ft_printf(\"Decimal: %%d | Base 10: %%i\\n\", i_nums[i], i_nums[i])\n");
-		ft_ret = ft_printf("	Decimal: %d | Base 10: %i\n", i_nums[i], i_nums[i]);
+		printf(" ft_printf(\"Decimal: %%d |
+		 Base 10: %%i\\n\", i_nums[i], i_nums[i])\n");
+		ft_ret = ft_printf("	Decimal: %d |
+		Base 10: %i\n", i_nums[i], i_nums[i]);
 		printf("	ft_printf returned: %d\n\n", ft_ret);
 
 		printf("======= Decimal: %d | Base 10: %i\n", i_nums[i], i_nums[i]);
-		printf(" printf(\"Decimal: %%d | Base 10: %%i\\n\", i_nums[i], i_nums[i])\n");
+		printf(" printf(\"Decimal: %%d |
+		Base 10: %%i\\n\", i_nums[i], i_nums[i])\n");
 		std_ret = printf("	Decimal: %d | Base 10: %i\n", i_nums[i], i_nums[i]);
 		printf("	printf returned: %d\n", std_ret);
 
@@ -73,7 +80,8 @@ void test_unsigned(void)
 
 	for (int i = 0; i < 3; i++)
 	{
-		printf("=========================== Test %d ===========================\n\n", i + 1);
+		printf("=========================== Test %d
+		===========================\n\n", i + 1);
 		printf("======= Unsigned: %u\n", u_nums[i]);
 		printf(" ft_printf(\"Unsigned: %%u\\n\", u_nums[i])\n");
 		ft_ret = ft_printf("	Unsigned: %u\n", u_nums[i]);
@@ -96,14 +104,17 @@ void test_hex(void)
 
 	for (int i = 0; i < 4; i++)
 	{
-		printf("=========================== Test %d ===========================\n\n", i + 1);
+		printf("=========================== Test %d
+		===========================\n\n", i + 1);
 		printf("======= hex: %x | HEX: %X\n", hex_nums[i], hex_nums[i]);
-		printf(" ft_printf(\"hex: %%x | HEX: %%X\\n\", hex_nums[i], hex_nums[i])\n");
+		printf(" ft_printf(\"hex: %%x |
+		HEX: %%X\\n\", hex_nums[i], hex_nums[i])\n");
 		ft_ret = ft_printf("	hex: %x | HEX: %X\n", hex_nums[i], hex_nums[i]);
 		printf("	ft_printf returned: %d\n\n", ft_ret);
 
 		printf("======= hex: %x | HEX: %X\n", hex_nums[i], hex_nums[i]);
-		printf(" printf(\"hex: %%x | HEX: %%X\\n\", hex_nums[i], hex_nums[i])\n");
+		printf(" printf(\"hex: %%x |
+		HEX: %%X\\n\", hex_nums[i], hex_nums[i])\n");
 		ft_ret = printf("	hex: %x | HEX: %X\n", hex_nums[i], hex_nums[i]);
 		printf("	printf returned: %d\n\n", ft_ret);
 
@@ -120,11 +131,13 @@ void test_mixed(void)
 	int ft_ret, std_ret;
 
 	printf(" ft_printf\n");
-	ft_ret = ft_printf("	%c %s %p %d %i %u %x %X %%\n", c, s, ptr, 123, -123, 456U, 255U, 255U);
+	ft_ret = ft_printf("	%c %s %p %d %i %u
+	%x %X %%\n", c, s, ptr, 123, -123, 456U, 255U, 255U);
 	printf("	ft_printf returned: %d\n", ft_ret);
 
 	printf(" printf\n");
-	std_ret = printf("	%c %s %p %d %i %u %x %X %%\n", c, s, ptr, 123, -123, 456U, 255U, 255U);
+	std_ret = printf("	%c %s %p %d %i %u
+	%x %X %%\n", c, s, ptr, 123, -123, 456U, 255U, 255U);
 	printf("	printf returned: %d\n", std_ret);
 }
 
@@ -145,88 +158,17 @@ void test_edge(void)
 	printf("	printf returned: %d\n", std_ret);
 }
 
-void test_bonus(void)
-{
-	char *s = "42school";
-	int ft_ret, std_ret;
-	const char *descriptions[] = {
-		"Right align width: '%5d'",
-		"Left align width: '%-5d'",
-		"Zero padding: '%05d'",
-		"Sign '+' and space: '%+d', '% d'",
-		"Negative number with width and zero: '%08d'",
-		"Precision with integer: '%.5d'",
-		"Precision with string: '%.5s'",
-		"Hex with prefix and zero: '%#08x'",
-		"Multiple flags combined: '%-+10.5d'"
-	};
-
-	for (int i = 0; i < 9; i++)
-	{
-		printf("=========================== Test %d ===========================\n\n", i + 1);
-		printf(" ft_printf(\"%s\")\n", descriptions[i]);
-		switch (i)
-		{
-			case 0: ft_ret = ft_printf("	Right align width: '%5d'\n", 42);
-				break;
-			case 1: ft_ret = ft_printf("	Left align width: '%-5d'\n", 42);
-				break;
-			case 2: ft_ret = ft_printf("	Zero padding: '%05d'\n", 42);
-				break;
-			case 3: ft_ret = ft_printf("	Sign '+' and space: '%+d', '% d'\n", 42, 42);
-				break;
-			case 4: ft_ret = ft_printf("	Negative number with width and zero: '%08d'\n", -42);
-				break;
-			case 5: ft_ret = ft_printf("	Precision with integer: '%.5d'\n", 42);
-				break;
-			case 6: ft_ret = ft_printf("	Precision with string: '%.5s'\n", s);
-				break;
-			case 7: ft_ret = ft_printf("	Hex with prefix and zero: '%#08x'\n", 255U);
-				break;
-			case 8: ft_ret = ft_printf("	Multiple flags combined: '%-+10.5d'\n", 42);
-				break;
-		}
-		printf("	ft_printf returned: %d\n\n", ft_ret);
-		printf(" printf(\"%s\")\n", descriptions[i]);
-		switch (i)
-		{
-			case 0: std_ret = printf("	Right align width: '%5d'\n", 42);
-				break;
-			case 1: std_ret = printf("	Left align width: '%-5d'\n", 42);
-				break;
-			case 2: std_ret = printf("	Zero padding: '%05d'\n", 42);
-				break;
-			case 3: std_ret = printf("	Sign '+' and space: '%+d', '% d'\n", 42, 42);
-				break;
-			case 4: std_ret = printf("	Negative number with width and zero: '%08d'\n", -42);
-				break;
-			case 5: std_ret = printf("	Precision with integer: '%.5d'\n", 42);
-				break;
-			case 6: std_ret = printf("	Precision with string: '%.5s'\n", s);
-				break;
-			case 7: std_ret = printf("	Hex with prefix and zero: '%#08x'\n", 255U);
-				break;
-			case 8: std_ret = printf("	Multiple flags combined: '%-+10.5d'\n", 42);
-				break;
-		}
-		printf("	printf returned: %d\n", std_ret);
-		if (i < 8)
-			printf("\n");
-	}
-}
-
 void print_menu(void)
 {
 	printf("\n===================== ft_printf Test Menu ====================\n");
-	printf(  "======================== Mandatory Part ======================\n\n");
+	printf(  "======================== Mandatory Part
+	======================\n\n");
 	printf("  1. Basic Tests (c, s, p)\n");
 	printf("  2. Signed Integers (d, i)\n");
 	printf("  3. Unsigned Integers (u)\n");
 	printf("  4. Hexadecimal (x, X)\n");
 	printf("  5. Mixed Formats\n");
 	printf("  6. Edge Cases (INT_MIN, UINT_MAX, NULL, etc.)\n");
-	printf("\n=========================== Bonus ============================\n\n");
-	printf("  7. Flags, Width, and Precision (0, -, +, #, etc.)\n");
 	printf("\n==============================================================\n");
 	printf("\n  0. Exit\n");
 }
@@ -235,9 +177,11 @@ void run_test(void (*func)())
 {
 	printf("\033[H\033[J");
 	print_menu();
-	printf("\n======================== Tests Output ========================\n\n");
+	printf("\n======================== Tests Output
+	========================\n\n");
 	func();
-	printf("\n==============================================================\n\n");
+	printf("\n=======================================
+	=======================\n\n");
 	printf("\nChoose an option: ");
 }
 
